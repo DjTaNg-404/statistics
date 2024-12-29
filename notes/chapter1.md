@@ -44,3 +44,37 @@ $$
 
 ## 中心极限定理
 
+**定理一（独立同分布的中心极限定理）**：设随机变量$X_1,X_2,\dots,X_n,\dots$相互独立，服从同一分布，且具有数学期望和方差：$E(X_k)=\mu,D(X_k)=\sigma^2>0(k=1,2,\dots)$，则随机变量之和$\sum_{k=1}^{n}X_k$的标准化变量
+$$
+Y_n=\frac{\sum_{k=1}^{n}{X_k}-E(\sum_{k=1}^{n}{X_k})}{\sqrt{D(\sum_{k=1}^{n}{X_k})}}=\frac{\sum_{k=1}^{n}{X_k}-n\mu}{\sqrt{n}\sigma}
+$$
+的分布函数$F_n(x)$对于任意$x$满足
+$$
+\lim_{n\to\infty}F_n(x)=\lim_{n\to\infty}P\{\frac{\sum_{k=1}^{n}{X_k}-n\mu}{\sqrt{n}\sigma}\le x\}=\int_{-\infty}^{x}\frac{1}{\sqrt{2\pi}}e^{-\frac{t^2}{2}}\mathrm{d}t=\phi(x)
+$$
+​	这就是说，均值为$\mu$，方差为$\sigma^2>0$的独立同分布的随机变量$X_1,X_2,\dots,X_n$之和$\sum_{k=1}^{n}{X_k}$的标准化变量，当$n$充分大时，有
+$$
+\frac{\sum_{k=1}^{n}{X_k}-n\mu}{\sqrt{n}\sigma}\sim N(0,1)
+$$
+将左端改写成$\frac{\frac{1}{n}\sum_{k=1}^{n}{X_k}-n\mu}{\sigma/\sqrt{n}}=\frac{\bar{X}-\mu}{\sigma/\sqrt{n}}$，这样上述结果可写成：当$n$充分大时，
+$$
+\frac{\bar{X}-\mu}{\sigma/\sqrt{n}}\sim N(0,1)\quad 或\quad \bar{X}\sim N(\mu,\sigma^2/n)
+$$
+**定理二（李雅普诺夫（Lyapunov）定理）**：设随机变量$X_1,X_2,\dots,X_n,\dots$相互独立，它们具有数学期望和方差$E(X_k)=\mu_k,\quad D(X_k)=\sigma_k^2>0,k=1,2,\dots$，记$B_n^2=\sum_{k=1}^{n}\sigma_k^2$，做存在正整数$\delta$，使得当$n\to\infty$时，
+$$
+\frac{1}{B_n^{2+\delta}}\sum_{k=1}^{n}E\{|X_k-\mu_k|^{2+\delta}\}\to0
+$$
+则随机变量之和$\sum_{k=1}^{n}X_k$的标准化变量
+$$
+Z_n=\frac{\sum_{k=1}^{n}{X_k}-E(\sum_{k=1}^{n}{X_k})}{\sqrt{D(\sum_{k=1}^{n}{X_k})}}=\frac{\sum_{k=1}^{n}{X_k}-\sum_{k=1}^{n}\mu_k}{B_n}
+$$
+的分布函数$F_n(x)$对于任意$x$满足
+$$
+\lim_{n\to\infty}F_n(x)=\lim_{n\to\infty}P\{\frac{\sum_{k=1}^{n}{X_k}-\sum_{k=1}^{n}\mu_k}{B_n}\le x\}=\int_{-\infty}^{x}\frac{1}{\sqrt{2\pi}}e^{-\frac{t^2}{2}}\mathrm{d}t=\phi(x)
+$$
+​	定理二表明随机变量$Z_n$当$n$很大时，近似地服从正态分布$N(0,1)$。
+
+**定理三（棣莫弗-拉普拉斯（De Moivre-Laplace）定理）**：设随机变量$\eta_n(n=1,2,\dots)$服从参数为$n$，$p(0<p<1)$的二项分布，则对于任意$x$，有
+$$
+\lim_{n\to\infty}P\{\frac{\eta_n-np}{\sqrt{np(1-p)}}\le x\}=\int_{-\infty}^{x}\frac{1}{\sqrt{2\pi}}e^{-\frac{t^2}{2}}\mathrm{d}t=\phi(x)
+$$
