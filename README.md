@@ -21,4 +21,5 @@
   - `README.md` - 项目说明文件
   - `notes/` - 学习笔记
     - `chapter1.md` - 大数定律及中心极限定律
+    - `chapter2.md` - 样本及抽样分布
 
