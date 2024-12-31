@@ -104,3 +104,46 @@ $$
 $$
 P\{F>F_a(n_1,n_2)\}=\int_{F_a(n_1,n_2)}^\infty\psi(y)\mathrm{d}y=a
 $$
+
+## 正态总体的样本均值与样本方差的分布
+
+​	设总体$X$的均值为$\mu$，方差为$\sigma^2$，$X_1,X_2,\dots,X_n$是来自$X$的一个样本，$\bar{X}$，$S^2$分别是样本均值和样本方差，则有
+$$
+E(\bar{X})=\mu,\quad D(\bar{X})=\sigma^2/n
+$$
+而
+$$
+E(S^2)=E[\frac{1}{n-1}(\sum_{i=1}^{n}X_i^2-n\bar{X}^2)]=\frac{1}{n-1}[\sum_{i=1}^{n}E(X_i^2)-nE(\bar{X}^2)]
+\\=\frac{1}{n-1}[\sum_{i=1}^{n}(\sigma^2+\mu^2)-n(\sigma^2/n+\mu^2)]=\sigma^2
+$$
+即
+$$
+E(S^2)=\sigma^2
+$$
+​	进而，设$X\sim N(\mu,\sigma^2)$，则$\bar{X}=\frac{1}{n}\sum_{i=1}^{n}X_i$也服从正态分布，于是有以下定理：
+
+**定理一**	设$X_1,X_2,\dots,X_n$是来自正态分布总体$N(\mu,\sigma^2)$的样本，$\bar{X}$是样本均值，则有
+$$
+\bar{X}\sim N(\mu,\sigma^2/n)
+$$
+**定理二**	设$X_1,X_2,\dots,X_n$是来自正态分布总体$N(\mu,\sigma^2)$的样本，$\bar{X},S^2$分别是样本均值和样本方差，则有
+$$
+\frac{(n-1)S^2}{\sigma^2}\sim\chi^2(n-1) \\
+\bar{X}与S^2相互独立
+$$
+**定理三**	设$X_1,X_2,\dots,X_n$是来自正态分布总体$N(\mu,\sigma^2)$的样本，$\bar{X},S^2$分别是样本均值和样本方差，则有
+$$
+\frac{\bar{X}-\mu}{S/\sqrt{n}}\sim t(n-1)
+$$
+**定理四**	设$X_1,X_2,\dots,X_n$与$Y_1,Y_2,\dots,Y_n$分别是来自正态分布总体$N(\mu_1,\sigma_1^2)$和$N(\mu_2,\sigma_2^2)$的样本，这两个样本相互独立。设$\bar{X},\bar{Y},S_1^2,S_2^2$分别是这两个样本的样本均值和样本方差，则有
+$$
+\frac{S_1^2/S_2^2}{\sigma_1^2/\sigma_2^2}\sim F(n_1-1,n_2-1)
+$$
+​	当$\sigma_1^2=\sigma_2^2=\sigma^2$时，
+$$
+\frac{(\bar{X}-\bar{Y})-(\mu_1-\mu_2)}{S_w\sqrt{\frac{1}{n_1}+\frac{1}{n_2}}}\sim t(n_1+n_2-2)
+$$
+其中
+$$
+S_w^2=\frac{(n_1-1)S_1^2+(n_2-1)S_2^2}{n_1+n_2-2},\quad S_w=\sqrt{S_w^2}
+$$
